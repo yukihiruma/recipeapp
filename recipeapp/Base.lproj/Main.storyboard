@@ -154,10 +154,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="guI-Jb-GFy">
-                                <rect key="frame" x="10" y="261.5" width="394" height="150"/>
+                                <rect key="frame" x="10" y="261.5" width="394" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="j0Y-cp-zT8"/>
+                                    <constraint firstAttribute="height" constant="200" id="j0Y-cp-zT8"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -185,7 +185,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="保存"/>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SM8-oL-i7a">
-                                <rect key="frame" x="57" y="426.5" width="300" height="150"/>
+                                <rect key="frame" x="57" y="562" width="300" height="150"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="Bs0-CU-Me7"/>
@@ -209,8 +209,8 @@
                             <constraint firstItem="nbg-FI-lVV" firstAttribute="top" secondItem="Kku-eX-9sd" secondAttribute="bottom" constant="15" id="HnI-e5-5jN"/>
                             <constraint firstItem="5sc-KI-zxB" firstAttribute="trailing" secondItem="gVt-iL-x9b" secondAttribute="trailing" constant="10" id="L1E-1Y-Zlp"/>
                             <constraint firstItem="5sc-KI-zxB" firstAttribute="trailing" secondItem="exL-Nl-Qt7" secondAttribute="trailing" constant="10" id="LLr-yJ-8w8"/>
-                            <constraint firstItem="SM8-oL-i7a" firstAttribute="top" secondItem="guI-Jb-GFy" secondAttribute="bottom" constant="15" id="PlO-ij-jYx"/>
                             <constraint firstItem="5sc-KI-zxB" firstAttribute="trailing" secondItem="Pwh-bA-eOh" secondAttribute="trailing" constant="10" id="Uxp-1l-N1t"/>
+                            <constraint firstItem="ZL4-qz-DyX" firstAttribute="top" secondItem="SM8-oL-i7a" secondAttribute="bottom" constant="20" id="Xyk-tG-bMt"/>
                             <constraint firstItem="gVt-iL-x9b" firstAttribute="top" secondItem="nbg-FI-lVV" secondAttribute="bottom" constant="5" id="ZjN-b0-GMD"/>
                             <constraint firstItem="exL-Nl-Qt7" firstAttribute="leading" secondItem="5sc-KI-zxB" secondAttribute="leading" constant="10" id="bmq-WL-Az4"/>
                             <constraint firstItem="ZL4-qz-DyX" firstAttribute="centerX" secondItem="FC2-bb-J3u" secondAttribute="centerX" id="h2g-Y0-y7V"/>
@@ -329,7 +329,13 @@
                             <constraint firstItem="7Hd-T8-cHF" firstAttribute="leading" secondItem="mqK-di-oa1" secondAttribute="leading" id="xEW-H7-4sL"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="sXF-5b-4nU"/>
+                    <navigationItem key="navigationItem" id="sXF-5b-4nU">
+                        <barButtonItem key="rightBarButtonItem" title="編集&gt;" id="ehR-jG-saE">
+                            <connections>
+                                <segue destination="6mf-2p-6tK" kind="show" id="jcg-hz-1V4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="inb-kJ-x6v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -356,6 +362,9 @@
             <point key="canvasLocation" x="824.63768115942037" y="52.901785714285715"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="m51-EJ-gqX"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="recepeapp_icon.jpg" width="739" height="569"/>
         <systemColor name="labelColor">
