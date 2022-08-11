@@ -16,7 +16,7 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     //DB内のレシピが格納されるリスト
     //あいうえお順でソート
-    //以降内容をアップデートしても自動更新したくないが、どう書けばいいかわからない
+    //以降内容をアップデートするとリストないは自動的に更新される
     var taskArray = try! Realm().objects(Recipe.self).sorted(byKeyPath: "title", ascending: true)
     
     override func viewDidLoad() {

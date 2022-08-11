@@ -232,7 +232,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Nw-4p-aVi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="PlB-r6-G1T"/>
+                <tapGestureRecognizer id="PlB-r6-G1T">
+                    <connections>
+                        <action selector="selectimage:" destination="6mf-2p-6tK" id="16D-mh-Rxx"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="h6Z-qh-bf5"/>
             </objects>
             <point key="canvasLocation" x="2447.826086956522" y="52.901785714285715"/>
         </scene>
@@ -244,11 +249,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjK-7p-CIn">
-                                <rect key="frame" x="180.5" y="762" width="53" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="編集"/>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oHt-sb-knp">
                                 <rect key="frame" x="0.0" y="56" width="414" height="200"/>
                                 <constraints>
@@ -290,40 +290,32 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VfL-BR-4vs">
-                                <rect key="frame" x="0.0" y="292" width="414" height="15"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="15" id="Fso-L7-flz"/>
-                                </constraints>
-                                <color key="textColor" systemColor="labelColor"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PhX-zW-hUg">
+                                <rect key="frame" x="0.0" y="292" width="414" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mqK-di-oa1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="VfL-BR-4vs" firstAttribute="top" secondItem="PtP-5m-HQe" secondAttribute="bottom" constant="5" id="3KB-GR-dXI"/>
-                            <constraint firstItem="VfL-BR-4vs" firstAttribute="leading" secondItem="mqK-di-oa1" secondAttribute="leading" id="4cA-iZ-WD3"/>
                             <constraint firstItem="mcz-vx-j4e" firstAttribute="top" secondItem="16w-Yx-0Zc" secondAttribute="bottom" constant="5" id="9ap-uL-FTz"/>
                             <constraint firstItem="mqK-di-oa1" firstAttribute="trailing" secondItem="PtP-5m-HQe" secondAttribute="trailing" id="BbC-x7-kwP"/>
-                            <constraint firstItem="rjK-7p-CIn" firstAttribute="centerX" secondItem="yqQ-rM-nvm" secondAttribute="centerX" id="BvW-Cv-luJ"/>
                             <constraint firstItem="16w-Yx-0Zc" firstAttribute="top" secondItem="hCb-xZ-8Fs" secondAttribute="bottom" constant="10" id="Grr-8L-Y1j"/>
-                            <constraint firstItem="mqK-di-oa1" firstAttribute="trailing" secondItem="VfL-BR-4vs" secondAttribute="trailing" id="K77-DY-hup"/>
                             <constraint firstItem="mcz-vx-j4e" firstAttribute="leading" secondItem="mqK-di-oa1" secondAttribute="leading" id="MzK-m3-tGa"/>
                             <constraint firstItem="mqK-di-oa1" firstAttribute="trailing" secondItem="mcz-vx-j4e" secondAttribute="trailing" id="OAm-og-zEQ"/>
-                            <constraint firstItem="rjK-7p-CIn" firstAttribute="top" secondItem="mcz-vx-j4e" secondAttribute="bottom" id="RGw-HE-aOR"/>
                             <constraint firstItem="hCb-xZ-8Fs" firstAttribute="top" secondItem="7Hd-T8-cHF" secondAttribute="bottom" constant="5" id="TuN-Wp-yar"/>
+                            <constraint firstItem="PhX-zW-hUg" firstAttribute="leading" secondItem="mqK-di-oa1" secondAttribute="leading" id="UzA-hM-PLp"/>
                             <constraint firstItem="oHt-sb-knp" firstAttribute="leading" secondItem="mqK-di-oa1" secondAttribute="leading" id="WW2-8E-YzQ"/>
                             <constraint firstItem="mqK-di-oa1" firstAttribute="trailing" secondItem="oHt-sb-knp" secondAttribute="trailing" id="Xur-e8-LFN"/>
                             <constraint firstItem="oHt-sb-knp" firstAttribute="top" secondItem="mqK-di-oa1" secondAttribute="top" id="YAu-JE-DZ2"/>
-                            <constraint firstItem="rjK-7p-CIn" firstAttribute="bottom" secondItem="mqK-di-oa1" secondAttribute="bottom" id="Ypa-bZ-vT0"/>
                             <constraint firstItem="PtP-5m-HQe" firstAttribute="top" secondItem="oHt-sb-knp" secondAttribute="bottom" constant="10" id="Z8F-Js-SaH"/>
                             <constraint firstItem="PtP-5m-HQe" firstAttribute="leading" secondItem="mqK-di-oa1" secondAttribute="leading" id="dLY-g7-AUR"/>
                             <constraint firstItem="mqK-di-oa1" firstAttribute="trailing" secondItem="7Hd-T8-cHF" secondAttribute="trailing" id="fIE-rm-QH7"/>
+                            <constraint firstItem="mqK-di-oa1" firstAttribute="trailing" secondItem="PhX-zW-hUg" secondAttribute="trailing" id="frg-JY-kSV"/>
                             <constraint firstItem="mqK-di-oa1" firstAttribute="trailing" secondItem="16w-Yx-0Zc" secondAttribute="trailing" id="jO6-VG-jvW"/>
                             <constraint firstItem="16w-Yx-0Zc" firstAttribute="leading" secondItem="mqK-di-oa1" secondAttribute="leading" id="sDj-K3-gba"/>
+                            <constraint firstItem="PhX-zW-hUg" firstAttribute="top" secondItem="PtP-5m-HQe" secondAttribute="bottom" constant="5" id="twV-Cg-3Zv"/>
                             <constraint firstItem="mqK-di-oa1" firstAttribute="trailing" secondItem="hCb-xZ-8Fs" secondAttribute="trailing" id="uk2-9z-7iR"/>
                             <constraint firstItem="hCb-xZ-8Fs" firstAttribute="leading" secondItem="mqK-di-oa1" secondAttribute="leading" id="v7z-sX-zhW"/>
                             <constraint firstItem="7Hd-T8-cHF" firstAttribute="leading" secondItem="mqK-di-oa1" secondAttribute="leading" id="xEW-H7-4sL"/>
@@ -336,6 +328,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="oHt-sb-knp" id="f5o-P8-i46"/>
+                        <outlet property="memoTextView" destination="hCb-xZ-8Fs" id="UTH-Fa-iRz"/>
+                        <outlet property="processTextView" destination="mcz-vx-j4e" id="SZf-ms-9hc"/>
+                        <outlet property="titleTextField" destination="PhX-zW-hUg" id="Hd8-RM-plB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="inb-kJ-x6v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
