@@ -16,6 +16,8 @@
 		3E3C90D7289F4B2F00A87BD9 /* recepeapp_icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3E3C90D6289F4B2F00A87BD9 /* recepeapp_icon.jpg */; };
 		3E3C90DB289F52A700A87BD9 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C90DA289F52A700A87BD9 /* ResultViewController.swift */; };
 		3E3C90DF289F8CD700A87BD9 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3C90DE289F8CD700A87BD9 /* InputViewController.swift */; };
+		3EDB84FF28A006FB00C9091E /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDB84FE28A006FB00C9091E /* Recipe.swift */; };
+		3EDB850128A0272600C9091E /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDB850028A0272600C9091E /* ShowViewController.swift */; };
 		5F45A6ED9FB49DAB2C596DE4 /* Pods_recipeapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F3DD1B1CB389352ADBC7DD /* Pods_recipeapp.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +35,8 @@
 		3E3C90D6289F4B2F00A87BD9 /* recepeapp_icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = recepeapp_icon.jpg; sourceTree = "<group>"; };
 		3E3C90DA289F52A700A87BD9 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		3E3C90DE289F8CD700A87BD9 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+		3EDB84FE28A006FB00C9091E /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		3EDB850028A0272600C9091E /* ShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
 		7F69D5025E0FE109209CE62B /* Pods-recipeapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-recipeapp.debug.xcconfig"; path = "Target Support Files/Pods-recipeapp/Pods-recipeapp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +78,8 @@
 				3E3C90C4289F496900A87BD9 /* ViewController.swift */,
 				3E3C90DA289F52A700A87BD9 /* ResultViewController.swift */,
 				3E3C90DE289F8CD700A87BD9 /* InputViewController.swift */,
+				3EDB850028A0272600C9091E /* ShowViewController.swift */,
+				3EDB84FE28A006FB00C9091E /* Recipe.swift */,
 				3E3C90C6289F496900A87BD9 /* Main.storyboard */,
 				3E3C90D6289F4B2F00A87BD9 /* recepeapp_icon.jpg */,
 				3E3C90C9289F496E00A87BD9 /* Assets.xcassets */,
@@ -89,7 +95,6 @@
 				7F69D5025E0FE109209CE62B /* Pods-recipeapp.debug.xcconfig */,
 				1E4F72122C74D778A353DA13 /* Pods-recipeapp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -218,8 +223,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E3C90C5289F496900A87BD9 /* ViewController.swift in Sources */,
+				3EDB850128A0272600C9091E /* ShowViewController.swift in Sources */,
 				3E3C90DF289F8CD700A87BD9 /* InputViewController.swift in Sources */,
 				3E3C90C1289F496900A87BD9 /* AppDelegate.swift in Sources */,
+				3EDB84FF28A006FB00C9091E /* Recipe.swift in Sources */,
 				3E3C90C3289F496900A87BD9 /* SceneDelegate.swift in Sources */,
 				3E3C90DB289F52A700A87BD9 /* ResultViewController.swift in Sources */,
 			);

@@ -1,25 +1,14 @@
 //
-//  InputViewController.swift
+//  ShowViewController.swift
 //  recipeapp
 //
-//  Created by yuki hiruma on 2022/08/07.
+//  Created by yuki hiruma on 2022/08/08.
 //
-
-//保存ボタンがまだ実装されていない。
 
 import UIKit
 
-//このファイル内でRealmを使うのでここで定義する
-import RealmSwift
+class ShowViewController: UIViewController {
 
-class InputViewController: UIViewController {
-    @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var memoTextView: UITextView!
-    @IBOutlet weak var processTextView: UITextView!
-    @IBOutlet weak var imageView: UIImageView!
-    
-    var recipe: Recipe!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
