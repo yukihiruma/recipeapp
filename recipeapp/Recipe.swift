@@ -21,7 +21,7 @@ class Recipe: Object{
     @objc dynamic var process = ""
     
     //写真
-    @objc dynamic var image: NSData? = nil
+    @objc dynamic var image: Data? = nil
     
     //管理用IDをプライマリーキーとして設定
     override static func primaryKey() -> String? {

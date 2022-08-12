@@ -22,9 +22,9 @@ class InputViewController: UIViewController, UIImagePickerControllerDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        //背景をタップしたらdismissKeyboardメソッドを呼ぶように設定する
-//        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(dismissKeyboard))
-//        self.view.addGestureRecognizer(tapGesture)
+        //        //背景をタップしたらdismissKeyboardメソッドを呼ぶように設定する
+        //        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(dismissKeyboard))
+        //        self.view.addGestureRecognizer(tapGesture)
         
         titleTextField.text = recipe.title
         memoTextView.text = recipe.memo
@@ -60,27 +60,30 @@ class InputViewController: UIViewController, UIImagePickerControllerDelegate, UI
         //画面選択を閉じる
         dismiss(animated: true, completion: nil)
     }
+
+    
     //画像が選択された場合の動作
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let selectedImage = info[UIImagePickerController] as? UIImage
-    
-
+//        //UIImagePickerController画面を閉じる
+//        picker.dismiss(animated: true, completion: nil)
+        let selectedImage = info[.originalImage] as? UIImage
         //イメージビューに表示
         imageView.image = selectedImage
         //画像選択画面を閉じる
         dismiss(animated: true, completion: nil)
     }
     
-    
+}
 
-    /*
-    // MARK: - Navigation
+/*
+ // MARK: - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ // Get the new view controller using segue.destination.
+ // Pass the selected object to the new view controller.
+ }
+ */
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 

@@ -9,6 +9,8 @@ import UIKit
 import RealmSwift
 
 class ShowViewController: UIViewController {
+    var image: UIImage!
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var memoTextView: UITextView!
     @IBOutlet weak var processTextView: UITextView!
@@ -19,19 +21,23 @@ class ShowViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //受け取った画像をImageViewに表示する
+        imageView.image = image
 
-        // Do any additional setup after loading the view.
     }
     
-    override func viewWillDisappeaar(_ animated: Bool){
+    //画像をJPEGに変換する
+    let imageData = image.jpegData(compressionQuality: 0.75)
+    
+    override func viewWillDisappear(_ animated: Bool){
         try! realm.write{
             self.recipe.title = self.titleTextField.text!
             self.recipe.memo = self.memoTextView.text!
             self.recipe.process = self.processTextView.text!
-            self.recipe.image = self.imageView.image!  //実装中断＠08111535
+            self.recipe.image = self.imageView. //ここに何を書いていいかわからない
         }
     }
-
+}
     /*
     // MARK: - Navigation
 
@@ -42,4 +48,3 @@ class ShowViewController: UIViewController {
     }
     */
 
-}
