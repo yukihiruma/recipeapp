@@ -61,15 +61,16 @@ class InputViewController: UIViewController, UIImagePickerControllerDelegate, UI
         dismiss(animated: true, completion: nil)
     }
     //画像が選択された場合の動作
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        guard let selectedImage = info[UIImagePickerController] else {fatal
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let selectedImage = info[UIImagePickerController] as? UIImage
     
+
         //イメージビューに表示
         imageView.image = selectedImage
         //画像選択画面を閉じる
         dismiss(animated: true, completion: nil)
+    }
     
-}
     
 
     /*
@@ -82,4 +83,4 @@ class InputViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     */
 
-}
+
