@@ -172,7 +172,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SM8-oL-i7a">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SM8-oL-i7a">
                                 <rect key="frame" x="57" y="628" width="300" height="150"/>
                                 <color key="backgroundColor" red="0.96769535949248886" green="0.88999083810819912" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
@@ -351,7 +351,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="m51-EJ-gqX"/>
+        <segue reference="jcg-hz-1V4"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="recepeapp_icon.jpg" width="739" height="569"/>

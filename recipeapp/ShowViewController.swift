@@ -21,8 +21,16 @@ class ShowViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(recipe) //recipeに何が入っているかの確認
         //受け取った画像をImageViewに表示する
-        imageView.image = image
+        if recipe.image != nil {
+            imageView.image = UIImage(data: recipe.image!)
+        }
+        
+        titleTextField.text = recipe.title
+        memoTextView.text = recipe.memo
+        processTextView.text = recipe.process
 
     }
     

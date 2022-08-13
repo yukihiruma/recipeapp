@@ -27,6 +27,9 @@ class InputViewController: UIViewController, UIImagePickerControllerDelegate, UI
         self.view.addGestureRecognizer(tapGesture)
         
         print(recipe) //recipeに何が入っているかの確認
+        if recipe.image != nil {
+            imageView.image = UIImage(data: recipe.image!)
+        }
         titleTextField.text = recipe.title
         memoTextView.text = recipe.memo
         processTextView.text = recipe.process
@@ -51,7 +54,7 @@ class InputViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
         //画像が選択された時の動作をどこに記述するかを設定する
         pickerController.delegate = self
-        
+        print(pickerController)//pickerControllerをだす
         //画像を選択する画面(pickerController)を表示する
         present(pickerController, animated: true, completion: nil)
         
