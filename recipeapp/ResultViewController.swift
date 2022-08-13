@@ -70,36 +70,45 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         }
     }
-    //segueで画面遷移するときに呼ばれる（＋を押すと空のレシピ追加画面が出る）
+    //segueで画面遷移するときに呼ばれる
+    //レシピを選択するとレシピが表示される->(ShowViewController)
+    //＋を押すと空のレシピ追加画面が出る->(InputViewController)
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        let inputViewController:InputViewController = segue.destination as! InputViewController
+//        let inputViewController:InputViewController = segue.destination as! InputViewController
+        
+        //セルをタップした場合、ShowViewControllerに渡して画面表示する
+        if segue.identifier == "cellSegue" {
+            let indexPath = self.tableView.indexPathForSelectedRow
+            let showViewController: ShowViewController = segue.destination as! ShowViewController
+            showViewController.recipe = taskArray[indexPath!.row]
+        } else{
             
-        let recipe = Recipe()
-        
-        let allRecipes = realm.objects(Recipe.self)
-        if allRecipes.count != 0{
-            recipe.id = allRecipes.max(ofProperty: "id")! + 1
+            let recipe = Recipe()
+            let inputViewController:InputViewController = segue.destination as! InputViewController
+            
+            let allRecipes = realm.objects(Recipe.self)
+            if allRecipes.count != 0{
+                recipe.id = allRecipes.max(ofProperty: "id")! + 1
+            }
+            
+            inputViewController.recipe = recipe
         }
-        
-        inputViewController.recipe = recipe
     }
-    
+        
     //レシピ追加/編集画面から戻ってきた時にTableViewを更新させる
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
         tableView.reloadData()
-}
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
-
 }
+        
+        /*
+         // MARK: - Navigation
+         
+         // In a storyboard-based application, you will often want to do a little preparation before navigation
+         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         // Get the new view controller using segue.destination.
+         // Pass the selected object to the new view controller.
+         }
+         */
+        

@@ -27,14 +27,17 @@ class ShowViewController: UIViewController {
     }
     
     //画像をJPEGに変換する
-    let imageData = image.jpegData(compressionQuality: 0.75)
+//    let imageData = image.jpegData(compressionQuality: 0.75)
     
     override func viewWillDisappear(_ animated: Bool){
         try! realm.write{
             self.recipe.title = self.titleTextField.text!
             self.recipe.memo = self.memoTextView.text!
             self.recipe.process = self.processTextView.text!
-            self.recipe.image = self.imageView. //ここに何を書いていいかわからない
+//            self.recipe.image = self.imageView. //ここに何を書いていいかわからない
+            let image = imageView.image
+            let imageData = image?.jpegData(compressionQuality: 0.75)
+            self.recipe.image = imageData
         }
     }
 }
