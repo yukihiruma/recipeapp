@@ -23,9 +23,8 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        //データを表示していない部分に罫線を追加（あとで削除）　ここから
+        //データを表示していない部分に罫線を追加
         tableView.fillerRowHeight = UITableView.automaticDimension
-        //データを表示していない部分に罫線を追加（あとで削除）　ここまで
         tableView.delegate = self
         tableView.dataSource = self
     }

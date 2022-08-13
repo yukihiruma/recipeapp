@@ -31,31 +31,57 @@ class ShowViewController: UIViewController {
         titleTextField.text = recipe.title
         memoTextView.text = recipe.memo
         processTextView.text = recipe.process
-
+        
     }
     
     //画像をJPEGに変換する
-//    let imageData = image.jpegData(compressionQuality: 0.75)
+    //    let imageData = image.jpegData(compressionQuality: 0.75)
     
     override func viewWillDisappear(_ animated: Bool){
         try! realm.write{
             self.recipe.title = self.titleTextField.text!
             self.recipe.memo = self.memoTextView.text!
             self.recipe.process = self.processTextView.text!
-//            self.recipe.image = self.imageView. //ここに何を書いていいかわからない
+            //            self.recipe.image = self.imageView. //ここに何を書いていいかわからない
             let image = imageView.image
             let imageData = image?.jpegData(compressionQuality: 0.75)
             self.recipe.image = imageData
         }
     }
-}
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    //編集ボタンを押すとInputViewControllerに遷移する。（データを渡して）
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        //segueから遷移先のInputViewControllerを取得する
+        let inputViewController:InputViewController = segue.destination as! InputViewController
+        
+        //遷移先のInputViewControllerにDBに入っているデータを渡す
+        inputViewController.recipe = recipe
     }
-    */
+        
+    //Backでレシピ表示画面に戻る？
+    override func viewWillDisappear(_ animated: Bool){
+        try! realm.write{
+            self.recipe.title = self.titleTextField.text!
+            self.recipe.memo = self.memoTextView.text
+            self.recipe.process = self.processTextView.text
+            let image = imageView.image
+            let imageData = image?.jpegData(compressionQuality: 0.75)
+            self.recipe.image = imageData
+            self.realm.add(self.recipe, update: .modified)
+        }
+            
+            super.viewWillDisappear(animated)
+
+        
+    }
+}
+/*
+ // MARK: - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ // Get the new view controller using segue.destination.
+ // Pass the selected object to the new view controller.
+ }
+ */
 

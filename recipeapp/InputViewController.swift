@@ -47,7 +47,7 @@ class InputViewController: UIViewController, UIImagePickerControllerDelegate, UI
         print("selectimageが呼ばれた")
         //画像を選択する時の画面の用意
         let pickerController = UIImagePickerController()
-
+        
         
         //画像の取得先はフォトライブラリ
         pickerController.sourceType = UIImagePickerController.SourceType.photoLibrary
@@ -66,34 +66,21 @@ class InputViewController: UIViewController, UIImagePickerControllerDelegate, UI
         //画面選択を閉じる
         dismiss(animated: true, completion: nil)
     }
-
+    
     
     //画像が選択された場合の動作
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-//        //UIImagePickerController画面を閉じる
-//        picker.dismiss(animated: true, completion: nil)
+        //        //UIImagePickerController画面を閉じる
+        //        picker.dismiss(animated: true, completion: nil)
         let selectedImage = info[.originalImage] as? UIImage
         //イメージビューに表示
         imageView.image = selectedImage
         //画像選択画面を閉じる
         dismiss(animated: true, completion: nil)
-    }
-    
-  
-    override func viewWillDisappear(_ animated: Bool){
-        try! realm.write{
-            self.recipe.title = self.titleTextField.text!
-            self.recipe.memo = self.memoTextView.text
-            self.recipe.process = self.processTextView.text
-            let image = imageView.image
-            let imageData = image?.jpegData(compressionQuality: 0.75)
-            self.recipe.image = imageData
-            self.realm.add(self.recipe, update: .modified)
-        }
         
-        super.viewWillDisappear(animated)
     }
     
+        super.viewWillDisappear(animated)
 
 }
 
