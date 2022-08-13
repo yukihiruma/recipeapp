@@ -22,10 +22,11 @@ class InputViewController: UIViewController, UIImagePickerControllerDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //        //背景をタップしたらdismissKeyboardメソッドを呼ぶように設定する
-        //        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(dismissKeyboard))
-        //        self.view.addGestureRecognizer(tapGesture)
+        //背景をタップしたらdismissKeyboardメソッドを呼ぶように設定する
+        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(dismissKeyboard))
+        self.view.addGestureRecognizer(tapGesture)
         
+        print(recipe) //recipeに何が入っているかの確認
         titleTextField.text = recipe.title
         memoTextView.text = recipe.memo
         processTextView.text = recipe.process
@@ -40,8 +41,10 @@ class InputViewController: UIViewController, UIImagePickerControllerDelegate, UI
     //imageviewに写真を登録する
     @IBAction func selectimage(_ sender: UITapGestureRecognizer) {
         //UIimageViewがタップされた時の動作を実装
+        print("selectimageが呼ばれた")
         //画像を選択する時の画面の用意
         let pickerController = UIImagePickerController()
+
         
         //画像の取得先はフォトライブラリ
         pickerController.sourceType = UIImagePickerController.SourceType.photoLibrary
@@ -73,6 +76,22 @@ class InputViewController: UIViewController, UIImagePickerControllerDelegate, UI
         dismiss(animated: true, completion: nil)
     }
     
+  
+    override func viewWillDisappear(_ animated: Bool){
+        try! realm.write{
+            self.recipe.title = self.titleTextField.text!
+            self.recipe.memo = self.memoTextView.text
+            self.recipe.process = self.processTextView.text
+            let image = imageView.image
+            let imageData = image?.jpegData(compressionQuality: 0.75)
+            self.recipe.image = imageData
+            self.realm.add(self.recipe, update: .modified)
+        }
+        
+        super.viewWillDisappear(animated)
+    }
+    
+
 }
 
 /*
