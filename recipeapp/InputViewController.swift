@@ -80,7 +80,17 @@ class InputViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
     }
     
-        super.viewWillDisappear(animated)
+    //
+    override func viewWillDisappear(_ animated: Bool){
+        try! realm.write{
+            self.recipe.title = self.titleTextField.text!
+            self.recipe.memo = self.memoTextView.text!
+            self.recipe.process = self.processTextView.text!
+            let image = imageView.image
+            let imageData = image?.jpegData(compressionQuality: 0.75)
+            self.recipe.image = imageData
+        }
+    }
 
 }
 

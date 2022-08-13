@@ -42,7 +42,6 @@ class ShowViewController: UIViewController {
             self.recipe.title = self.titleTextField.text!
             self.recipe.memo = self.memoTextView.text!
             self.recipe.process = self.processTextView.text!
-            //            self.recipe.image = self.imageView. //ここに何を書いていいかわからない
             let image = imageView.image
             let imageData = image?.jpegData(compressionQuality: 0.75)
             self.recipe.image = imageData
@@ -59,20 +58,16 @@ class ShowViewController: UIViewController {
     }
         
     //Backでレシピ表示画面に戻る？
-    override func viewWillDisappear(_ animated: Bool){
-        try! realm.write{
-            self.recipe.title = self.titleTextField.text!
-            self.recipe.memo = self.memoTextView.text
-            self.recipe.process = self.processTextView.text
-            let image = imageView.image
-            let imageData = image?.jpegData(compressionQuality: 0.75)
-            self.recipe.image = imageData
-            self.realm.add(self.recipe, update: .modified)
-        }
-            
-            super.viewWillDisappear(animated)
+//    print(recipe) //recipeに何が入っているかの確認
+    override func viewWillAppear(_ animated: Bool){
+        if recipe.image != nil {
+        imageView.image = UIImage(data: recipe.image!)
+    }
+    
+    titleTextField.text = recipe.title
+    memoTextView.text = recipe.memo
+    processTextView.text = recipe.process
 
-        
     }
 }
 /*
