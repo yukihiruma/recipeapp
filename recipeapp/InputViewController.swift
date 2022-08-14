@@ -89,6 +89,7 @@ class InputViewController: UIViewController, UIImagePickerControllerDelegate, UI
             let image = imageView.image
             let imageData = image?.jpegData(compressionQuality: 0.75)
             self.recipe.image = imageData
+            self.realm.add(self.recipe, update: .modified)
         }
     }
 

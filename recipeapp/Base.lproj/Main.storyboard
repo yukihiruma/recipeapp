@@ -39,7 +39,7 @@
                                         </fragment>
                                     </attributedString>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" red="0.095583039900828337" green="0.76043202801460719" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="baseBackgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="vAd-mq-bL0" kind="show" id="Frt-ot-4nd"/>
@@ -47,7 +47,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.77067106868122859" green="1" blue="0.97985007479710717" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dcS-fN-DFI" firstAttribute="centerX" secondItem="3uR-tI-Ub5" secondAttribute="centerX" id="3j8-zK-1IM"/>
                             <constraint firstItem="dcS-fN-DFI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="LJY-eE-ptr"/>
@@ -354,7 +354,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="jcg-hz-1V4"/>
+        <segue reference="m51-EJ-gqX"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="recepeapp_icon.jpg" width="739" height="569"/>
